@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f4f4f4;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --income-color: #28a745;
+    --expense-color: #dc3545;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+.dark-theme {
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--primary-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.balance-container {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+.balance-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.balance-item {
+    flex: 1;
+    padding: 15px;
+    margin: 0 7px;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.balance-item.income {
+    background-color: var(--income-color);
+}
+
+.balance-item.expense {
+    background-color: var(--expense-color);
+}
+
+.transaction-section {
+    margin-bottom: 25px;
+}
+
+.transaction-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filter-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    background-color: var(--secondary-bg);
+    color: var(--text-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.transaction-list {
+    list-style-type: none;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    color: var(--text-primary);
+}
+
+.transaction-item.income {
+    border-left: 5px solid var(--income-color);
+}
+
+.transaction-item.expense {
+    border-left: 5px solid var(--expense-color);
+}
+
+.add-transaction-container {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 8px;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        margin: 10px;
+        padding: 15px;
+    }
+}
